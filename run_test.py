@@ -3,11 +3,11 @@
 
 import os
 import sys
-import time
+
 sys.path.append(os.path.dirname(__file__))
 from config import setting
 import pytest
-from utils.log import Log
+
 
 def run_cases(browser_name, testcases_path):
     """执行所有的测试用例"""
