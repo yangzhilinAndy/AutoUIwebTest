@@ -1,0 +1,13 @@
+testinfo:
+      - title: 首页
+        info: 首页测试
+testcase:
+      - caseId: test_index001
+        detail: 展开和回收全部讨论区菜单
+        screen: 全部讨论区
+        check1: slist folder-open
+        check2: slist folder-close
+      - caseId: test_index002
+        detail: 搜索帖子abc
+        screen: 搜索帖子abc
+        check1: https://www.newsmth.net/nForum/#!s/board?b=abc

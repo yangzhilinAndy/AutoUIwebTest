@@ -1,7 +1,3 @@
-testinfo:
-      - id: test_index001
-        title: 首页
-        info: 打开首页
 testcase:
       - element_info: //*[@id="xlist"]/ul/li[1]/span/span
         find_type: XPATH

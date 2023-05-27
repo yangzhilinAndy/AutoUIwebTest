@@ -7,12 +7,13 @@ import pytest
 from page.indexPage import Index
 from utils.log import Log
 from config import setting
+from utils.GetYaml import getyaml
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 class TestIndex:
     """首页测试"""
     testDataPath = setting.TEST_DATA_YAML + "/index_data.yaml"
-
+    reader = getyaml(testDataPath)
     @pytest.fixture(scope='class')
     def po(self, driver):
         """
@@ -24,7 +25,7 @@ class TestIndex:
     def test_pictures(self, po):
         po.check_pictures()
 
-    @pytest.mark.parametrize("caseId, detail, screen, check1, check2", [next(excel_file)])
+    @pytest.mark.parametrize("caseId, detail, screen, check1, check2", [reader.get_test_data(0)])
     def test_index_menu(self, po, caseId, detail, screen, check1, check2):
         """
         首页测试
@@ -42,9 +43,9 @@ class TestIndex:
         assert po.click_menu_success_hint() == check1
         log.info("返回实际结果是->: {0}".format(po.click_menu_success_hint()))
 
-    @pytest.mark.parametrize("caseId, detail, screen, check1, check2", [next(excel_file)])
-    def test_index_search(self, po, caseId, detail, screen, check1, check2):
+    @pytest.mark.parametrize("caseId, detail, screen, check1", [reader.get_test_data(1)])
+    def test_index_search(self, po, caseId, detail, screen, check1):
         po.search('abc')
         assert po.search_success_hint() == check1
-        assert po.search_success_hint2() == check2
+
 

@@ -105,3 +105,14 @@ class getyaml:
     def get_CheckOperate_type(self, i):
         data = self.alldata()
         return data['check'][i]['operate_type']
+
+    def get_test_data(self, i):
+        data = self.alldata()
+        return tuple(data['testcase'][i].values())
+
+    def get_multiple_test_data(self, index_list):
+        test_data_list = []
+        for i in index_list:
+            test_data_list.append(self.get_test_data(i))
+        return test_data_list
+
