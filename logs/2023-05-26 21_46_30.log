@@ -1,0 +1,3 @@
+[2023-05-26 21:46:30,164] [log.py|__console] [line:40] INFO    : 当前执行测试用例ID-> test_index001 ; 测试点-> 展开和回收全部讨论区菜单
+[2023-05-26 21:46:32,317] [log.py|__console] [line:40] INFO    : 返回实际结果是->: slist folder-close
+[2023-05-26 21:46:37,438] [log.py|__console] [line:40] INFO    : 返回实际结果是->: slist folder-open

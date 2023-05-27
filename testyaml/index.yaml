@@ -1,0 +1,33 @@
+testinfo:
+      - id: test_index001
+        title: 首页
+        info: 打开首页
+testcase:
+      - element_info: //*[@id="xlist"]/ul/li[1]/span/span
+        find_type: XPATH
+        operate_type: click
+        info: 讨论区菜单按钮
+      - element_info: //*[@id="b_search"]
+        find_type: XPATH
+        operate_type: send_keys
+        info: 搜索框
+      - element_info: //*[@id="slider"]/div[1]
+        find_type: XPATH
+        operate_type: None
+        info: 图片框
+      - element_info: //*[@id="slider"]/div[2]
+        find_type: XPATH
+        operate_type: None
+        info: 预览框
+      - element_info: //*[@id="body"]/div[2]/table/tbody
+        find_type: XPATH
+        operate_type: None
+        info: 搜索结果列表
+
+check:
+      - element_info: //*[@id="xlist"]/ul/li[1]
+        find_type: XPATH
+        info: 菜单
+      - element_info: //*[@id="notice_nav"]/a[2]
+        find_type: XPATH
+        info: 搜索结果
