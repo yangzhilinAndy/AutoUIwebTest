@@ -10,4 +10,5 @@ testcase:
       - caseId: test_index002
         detail: 搜索帖子abc
         screen: 搜索帖子abc
+        inputData: 生活
         check1: https://www.newsmth.net/nForum/#!s/board?b=abc

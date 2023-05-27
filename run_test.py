@@ -24,4 +24,4 @@ if __name__ == "__main__":
     browser = 'chrome'
     testcases = setting.TEST_DIR + '/test_index.py'
 
-#    run_cases(browser, testcases)
+    run_cases(browser, testcases)

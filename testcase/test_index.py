@@ -43,9 +43,9 @@ class TestIndex:
         assert po.click_menu_success_hint() == check1
         log.info("返回实际结果是->: {0}".format(po.click_menu_success_hint()))
 
-    @pytest.mark.parametrize("caseId, detail, screen, check1", [reader.get_test_data(1)])
-    def test_index_search(self, po, caseId, detail, screen, check1):
-        po.search('abc')
+    @pytest.mark.parametrize("caseId, detail, screen, inputData, check1", [reader.get_test_data(1)])
+    def test_index_search(self, po, caseId, detail, screen, inputData, check1):
+        po.search(inputData)
         assert po.search_success_hint() == check1
 
 
