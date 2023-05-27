@@ -1,0 +1,5 @@
+testcase:
+  - element_info: //*[@id="body"]/div[2]/table/tbody/tr
+    find_type: XPATH
+    operate_type: None
+    info: 搜索结果列表

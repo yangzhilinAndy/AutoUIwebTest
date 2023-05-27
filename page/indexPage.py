@@ -14,19 +14,18 @@ from utils.GetYaml import getyaml
 
 
 class Index(Page):
-    url = '/nForum/#!mainpage'
     elementData = getyaml(setting.TEST_Element_YAML + '/' + 'index.yaml')
 
     def __init__(self, driver):
         super().__init__(driver)
+        self.url = '/nForum/#!mainpage'
         self.open(self.url)
         self.left_menu_button = self.elementData.get_element_from_data(0)
         self.menu_success_hint = self.elementData.get_check_from_data(0)
         self.search_box = self.elementData.get_element_from_data(1)
-        self.menu_success_hint2 = self.elementData.get_check_from_data(1)
         self.pictures = self.elementData.get_element_from_data(2)
         self.previews = self.elementData.get_element_from_data(3)
-        self.results = self.elementData.get_element_from_data(4)
+
 
     def click_menu(self):
         """
@@ -58,9 +57,6 @@ class Index(Page):
     def search_success_hint(self):
         return self.driver.current_url
 
-    def search_success_hint2(self):
-        return self.find_element(*self.menu_success_hint2).text
-
     def check_pictures(self):
         links = self.find_element(*self.pictures).find_elements(By.XPATH, './a')
         preview_list = self.find_element(*self.previews)
@@ -70,7 +66,4 @@ class Index(Page):
             )
             p = preview_list.find_element(By.XPATH, './a[@class="cur"]')
             assert link.get_attribute("href") == p.get_attribute("href")
-
-    def get_search_results(self):
-        return self.find_element(*self.results).find_elements(By.XPATH, './tr')
 

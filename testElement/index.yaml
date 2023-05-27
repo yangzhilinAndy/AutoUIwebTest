@@ -15,15 +15,8 @@ testcase:
         find_type: XPATH
         operate_type: None
         info: 预览框
-      - element_info: //*[@id="body"]/div[2]/table/tbody
-        find_type: XPATH
-        operate_type: None
-        info: 搜索结果列表
 
 check:
       - element_info: //*[@id="xlist"]/ul/li[1]
         find_type: XPATH
         info: 菜单
-      - element_info: //*[@id="notice_nav"]/a[2]
-        find_type: XPATH
-        info: 搜索结果
