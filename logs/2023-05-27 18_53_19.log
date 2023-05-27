@@ -1,0 +1,5 @@
+[2023-05-27 18:53:23,728] [log.py|__console] [line:50] INFO    : 执行测试用例ID-> test_index001 ; 测试点-> 展开和回收全部讨论区菜单
+[2023-05-27 18:53:29,417] [log.py|__console] [line:50] INFO    : 执行测试用例ID-> test_index002 ; 测试点-> 搜索帖子：生活
+[2023-05-27 18:53:33,878] [log.py|__console] [line:50] INFO    : 执行测试用例ID-> test_index003 ; 测试点-> 搜索帖子：工作
+[2023-05-27 18:53:37,830] [log.py|__console] [line:50] INFO    : 执行测试用例ID-> test_index004 ; 测试点-> 搜索帖子：快乐
+[2023-05-27 18:53:41,739] [log.py|__console] [line:50] INFO    : 执行测试用例ID-> test_index005 ; 测试点-> 检查轮播图

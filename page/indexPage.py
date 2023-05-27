@@ -11,25 +11,22 @@ from config import setting
 from page.basePage import Page
 from time import sleep
 from utils.GetYaml import getyaml
-from utils.log import Log
-
-testData = getyaml(setting.TEST_Element_YAML + '/' + 'index.yaml')
-log = Log()
 
 
 class Index(Page):
     url = '/nForum/#!mainpage'
-    left_menu_button = Page.get_element_from_data(0, testData)
-    menu_success_hint = Page.get_check_from_data(0, testData)
-    search_box = Page.get_element_from_data(1, testData)
-    menu_success_hint2 = Page.get_check_from_data(1, testData)
-    pictures = Page.get_element_from_data(2, testData)
-    previews = Page.get_element_from_data(3, testData)
-    results = Page.get_element_from_data(4, testData)
+    elementData = getyaml(setting.TEST_Element_YAML + '/' + 'index.yaml')
 
     def __init__(self, driver):
         super().__init__(driver)
         self.open(self.url)
+        self.left_menu_button = self.elementData.get_element_from_data(0)
+        self.menu_success_hint = self.elementData.get_check_from_data(0)
+        self.search_box = self.elementData.get_element_from_data(1)
+        self.menu_success_hint2 = self.elementData.get_check_from_data(1)
+        self.pictures = self.elementData.get_element_from_data(2)
+        self.previews = self.elementData.get_element_from_data(3)
+        self.results = self.elementData.get_element_from_data(4)
 
     def click_menu(self):
         """
@@ -54,6 +51,9 @@ class Index(Page):
         sleep(1)
         self.find_element(*self.search_box).send_keys(Keys.ENTER)
         sleep(1)
+
+    def get_back_to_index(self):
+        self.open(self.url)
 
     def search_success_hint(self):
         return self.driver.current_url

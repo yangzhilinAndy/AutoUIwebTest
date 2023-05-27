@@ -52,6 +52,8 @@ class TestIndex:
         po.search(inputData)
         assert po.search_success_hint() == check1
         po.get_screen_shot(screen)
+        po.get_back_to_index()  # 回到首页
+
     @pytest.mark.parametrize("caseId, detail, screen", [reader.get_test_data(4)])
     def test_pictures(self, po, caseId, detail, screen):
         """

@@ -2,7 +2,7 @@
 # _*_ coding:utf-8 _*_
 
 import yaml
-
+from selenium.webdriver.common.by import By
 
 class getyaml:
     def __init__(self, filepath):
@@ -115,4 +115,23 @@ class getyaml:
         for i in index_list:
             test_data_list.append(self.get_test_data(i))
         return test_data_list
+
+    def get_element_from_data(self, index):
+        findType = By.XPATH
+        if self.get_find_type(index) == 'ID':
+            findType = By.ID
+        elif self.get_find_type(index) != 'XPATH':
+            raise Exception("Unsupported find type:" + self.get_find_type(index))
+        eleInfo = self.get_elementinfo(index)
+        return findType, eleInfo
+
+    def get_check_from_data(self, index):
+        findType = By.XPATH
+        if self.get_find_type2(index) == 'ID':
+            findType = By.ID
+        elif self.get_find_type2(index) != 'XPATH':
+            raise Exception("Unsupported find type:" + self.get_find_type(index))
+        eleInfo = self.get_CheckElementinfo(index)
+        return findType, eleInfo
+
 

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
 import os, sys
-from selenium.webdriver.common.by import By
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from config import setting
 from selenium.webdriver.support.wait import WebDriverWait
@@ -36,6 +35,7 @@ class Page(object):
         """
         url = self.base_url + url
         self.driver.get(url)
+
 
     def find_element(self, *loc):
         """
@@ -103,22 +103,4 @@ class Page(object):
 
     def get_screen_shot(self, file_name):
         insert_img(self.driver, file_name)
-    @classmethod
-    def get_element_from_data(cls, index, data):
-        findType = By.XPATH
-        if data.get_find_type(index) == 'ID':
-            findType = By.ID
-        elif data.get_find_type(index) != 'XPATH':
-            raise Exception("Unsupported find type:" + data.get_find_type(index))
-        eleInfo = data.get_elementinfo(index)
-        return findType, eleInfo
 
-    @classmethod
-    def get_check_from_data(cls, index, data):
-        findType = By.XPATH
-        if data.get_find_type2(index) == 'ID':
-            findType = By.ID
-        elif data.get_find_type2(index) != 'XPATH':
-            raise Exception("Unsupported find type:" + data.get_find_type(index))
-        eleInfo = data.get_CheckElementinfo(index)
-        return findType, eleInfo

@@ -1,16 +1,16 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sat May 27 16:50:08 CST 2023","Sat May 27 16:50:11 CST 2023","3604","testcase","test_index","TestIndex","","","test_index_search[test_index002-\u641c\u7d22\u5e16\u5b50\uff1a\u751f\u6d3b-\u641c\u7d22\u5e16\u5b50\uff1a\u751f\u6d3b-\u751f\u6d3b-https://www.newsmth.net/nForum/#!s/board?b=%25E7%2594%259F%25E6%25B4%25BB]","
+"passed","Sat May 27 18:53:29 CST 2023","Sat May 27 18:53:33 CST 2023","4454","testcase","test_index","TestIndex","","","test_index_search[test_index002-\u641c\u7d22\u5e16\u5b50\uff1a\u751f\u6d3b-\u641c\u7d22\u5e16\u5b50\uff1a\u751f\u6d3b-\u751f\u6d3b-https://www.newsmth.net/nForum/#!s/board?b=%25E7%2594%259F%25E6%25B4%25BB]","
         在搜索框中输入关键词，看是否跳转到正确的搜索界面
         "
-"passed","Sat May 27 16:50:11 CST 2023","Sat May 27 16:50:15 CST 2023","3606","testcase","test_index","TestIndex","","","test_index_search[test_index003-\u641c\u7d22\u5e16\u5b50\uff1a\u5de5\u4f5c-\u641c\u7d22\u5e16\u5b50\uff1a\u5de5\u4f5c-\u5de5\u4f5c-https://www.newsmth.net/nForum/#!s/board?b=%25E5%25B7%25A5%25E4%25BD%259C]","
+"passed","Sat May 27 18:53:33 CST 2023","Sat May 27 18:53:37 CST 2023","3944","testcase","test_index","TestIndex","","","test_index_search[test_index003-\u641c\u7d22\u5e16\u5b50\uff1a\u5de5\u4f5c-\u641c\u7d22\u5e16\u5b50\uff1a\u5de5\u4f5c-\u5de5\u4f5c-https://www.newsmth.net/nForum/#!s/board?b=%25E5%25B7%25A5%25E4%25BD%259C]","
         在搜索框中输入关键词，看是否跳转到正确的搜索界面
         "
-"passed","Sat May 27 16:50:15 CST 2023","Sat May 27 16:50:18 CST 2023","3534","testcase","test_index","TestIndex","","","test_index_search[test_index004-\u641c\u7d22\u5e16\u5b50\uff1a\u5feb\u4e50-\u641c\u7d22\u5e16\u5b50\uff1a\u5feb\u4e50-\u5feb\u4e50-https://www.newsmth.net/nForum/#!s/board?b=%25E5%25BF%25AB%25E4%25B9%2590]","
+"passed","Sat May 27 18:53:37 CST 2023","Sat May 27 18:53:41 CST 2023","3899","testcase","test_index","TestIndex","","","test_index_search[test_index004-\u641c\u7d22\u5e16\u5b50\uff1a\u5feb\u4e50-\u641c\u7d22\u5e16\u5b50\uff1a\u5feb\u4e50-\u5feb\u4e50-https://www.newsmth.net/nForum/#!s/board?b=%25E5%25BF%25AB%25E4%25B9%2590]","
         在搜索框中输入关键词，看是否跳转到正确的搜索界面
         "
-"broken","Sat May 27 16:50:18 CST 2023","Sat May 27 16:50:29 CST 2023","10566","testcase","test_index","TestIndex","","","test_pictures[test_index005-\u68c0\u67e5\u8f6e\u64ad\u56fe-\u8f6e\u64ad\u56fe]","
-        检查首页轮播图与预览图是否一致
-        "
-"passed","Sat May 27 16:50:02 CST 2023","Sat May 27 16:50:08 CST 2023","5677","testcase","test_index","TestIndex","","","test_index_menu[test_index001-\u5c55\u5f00\u548c\u56de\u6536\u5168\u90e8\u8ba8\u8bba\u533a\u83dc\u5355-\u5168\u90e8\u8ba8\u8bba\u533a-slist folder-open-slist folder-close]","
+"passed","Sat May 27 18:53:23 CST 2023","Sat May 27 18:53:29 CST 2023","5673","testcase","test_index","TestIndex","","","test_index_menu[test_index001-\u5c55\u5f00\u548c\u56de\u6536\u5168\u90e8\u8ba8\u8bba\u533a\u83dc\u5355-\u5168\u90e8\u8ba8\u8bba\u533a-slist folder-open-slist folder-close]","
         展开和回收全部讨论区菜单
+        "
+"passed","Sat May 27 18:53:41 CST 2023","Sat May 27 18:53:50 CST 2023","8797","testcase","test_index","TestIndex","","","test_pictures[test_index005-\u68c0\u67e5\u8f6e\u64ad\u56fe-\u8f6e\u64ad\u56fe]","
+        检查首页轮播图与预览图是否一致
         "
