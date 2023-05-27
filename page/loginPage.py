@@ -6,9 +6,9 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from config import setting
-from public.page_obj.base import Page
+from page.base import Page
 from time import sleep
-from public.models.GetYaml import getyaml
+from utils.GetYaml import getyaml
 from selenium.webdriver.support.select import Select
 
 testData = getyaml(setting.TEST_Element_YAML + '/' + 'login.yaml')

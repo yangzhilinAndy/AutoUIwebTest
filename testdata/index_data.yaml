@@ -8,7 +8,21 @@ testcase:
         check1: slist folder-open
         check2: slist folder-close
       - caseId: test_index002
-        detail: 搜索帖子abc
-        screen: 搜索帖子abc
+        detail: 搜索帖子：生活
+        screen: 搜索帖子：生活
         inputData: 生活
-        check1: https://www.newsmth.net/nForum/#!s/board?b=abc
+        check1: https://www.newsmth.net/nForum/#!s/board?b=%25E7%2594%259F%25E6%25B4%25BB
+      - caseId: test_index003
+        detail: 搜索帖子：工作
+        screen: 搜索帖子：工作
+        inputData: 工作
+        check1: https://www.newsmth.net/nForum/#!s/board?b=%25E5%25B7%25A5%25E4%25BD%259C
+      - caseId: test_index004
+        detail: 搜索帖子：快乐
+        screen: 搜索帖子：快乐
+        inputData: 快乐
+        check1: https://www.newsmth.net/nForum/#!s/board?b=%25E5%25BF%25AB%25E4%25B9%2590
+      - caseId: test_index005
+        detail: 检查轮播图
+        screen: 轮播图
+

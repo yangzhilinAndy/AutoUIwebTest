@@ -10,6 +10,7 @@ from selenium.common.exceptions import NoSuchFrameException, NoSuchWindowExcepti
     NoSuchElementException
 import configparser
 from utils.log import Log
+from utils.screenshot import insert_img
 
 con = configparser.ConfigParser()
 # --------- 读取配置文件 ---------------
@@ -100,6 +101,8 @@ class Page(object):
         except NoAlertPresentException as msg:
             log.error("查找alert弹出框异常-> {0}".format(msg))
 
+    def get_screen_shot(self, file_name):
+        insert_img(self.driver, file_name)
     @classmethod
     def get_element_from_data(cls, index, data):
         findType = By.XPATH

@@ -8,10 +8,10 @@ from selenium.webdriver.support import expected_conditions
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from config import setting
-from public.page_obj.base import Page
+from page.base import Page
 from time import sleep
-from public.models.GetYaml import getyaml
-from public.models.log import Log
+from utils.GetYaml import getyaml
+from utils.log import Log
 
 testData = getyaml(setting.TEST_Element_YAML + '/' + 'index.yaml')
 log = Log()
@@ -48,6 +48,8 @@ class Index(Page):
         WebDriverWait(self.driver, 3, 0.5).until(
             expected_conditions.presence_of_element_located(self.search_box)
         )
+        self.find_element(*self.search_box).clear()
+        sleep(1)
         self.find_element(*self.search_box).send_keys(keyword)
         sleep(1)
         self.find_element(*self.search_box).send_keys(Keys.ENTER)
