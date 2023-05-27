@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from config import setting
-from page.base import Page
+from page.basePage import Page
 from time import sleep
 from utils.GetYaml import getyaml
 from utils.log import Log

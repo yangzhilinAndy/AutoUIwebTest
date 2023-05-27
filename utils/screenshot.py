@@ -14,5 +14,5 @@ def insert_img(driver, file_name):
     :param file_name: 截图文件名
     :return: 返回指定路径的截图文件
     """
-    file_path = setting.TEST_RESULT + "/screenshot/" + file_name
+    file_path = setting.TEST_RESULT + "/screenshot/" + file_name+'.jpg'
     return driver.get_screenshot_as_file(file_path)
