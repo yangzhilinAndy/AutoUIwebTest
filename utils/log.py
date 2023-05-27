@@ -1,31 +1,41 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
-__author__ = 'YinJia'
 
 
 import logging, time
-import os,sys
+import os, sys
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from config import setting
 
 # 日志存放文件夹，如不存在，则自动创建一个logs目录
-if not os.path.exists(setting.LOG_DIR):os.mkdir(setting.LOG_DIR)
+if not os.path.exists(setting.LOG_DIR): os.mkdir(setting.LOG_DIR)
+
 
 class Log():
     """
     日志记录类
+    单例模式
     """
+    __instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls.__instance:
+            cls.__instance = object.__new__(cls)
+        return cls.__instance
+
     def __init__(self):
         # 文件的命名
-        self.logname = os.path.join(setting.LOG_DIR, '%s.log'%time.strftime('%Y-%m-%d %H_%M_%S'))
+        self.logname = os.path.join(setting.LOG_DIR, '%s.log' % time.strftime('%Y-%m-%d %H_%M_%S'))
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.DEBUG)
         # 日志输出格式
-        self.formatter = logging.Formatter('[%(asctime)s] [%(filename)s|%(funcName)s] [line:%(lineno)d] %(levelname)-8s: %(message)s')
+        self.formatter = logging.Formatter(
+            '[%(asctime)s] [%(filename)s|%(funcName)s] [line:%(lineno)d] %(levelname)-8s: %(message)s')
 
     def __console(self, level, message):
         # 创建一个FileHandler，用于写到本地日志文件
-        fh = logging.FileHandler(self.logname,encoding='utf-8')
+        fh = logging.FileHandler(self.logname, encoding='utf-8')
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(self.formatter)
         self.logger.addHandler(fh)

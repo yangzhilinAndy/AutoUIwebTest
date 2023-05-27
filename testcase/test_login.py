@@ -5,10 +5,10 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 import pytest
-from public.models import screenshot
-from public.models.excelHelper import read_excel
-from public.page_obj.loginPage import login
-from public.models.log import Log
+from utils import screenshot
+
+from page.loginPage import login
+from utils.log import Log
 
 
 class TestLogin:

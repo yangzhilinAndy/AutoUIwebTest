@@ -4,8 +4,8 @@ import os
 import sys
 from time import sleep
 import pytest
-from public.page_obj.indexPage import Index
-from public.models.log import Log
+from page.indexPage import Index
+from utils.log import Log
 from config import setting
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 

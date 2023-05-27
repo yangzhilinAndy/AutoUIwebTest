@@ -9,12 +9,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchFrameException, NoSuchWindowException, NoAlertPresentException, \
     NoSuchElementException
 import configparser
-from public.models.log import Log
+from utils.log import Log
 
 con = configparser.ConfigParser()
-con.read(setting.CONFIG_DIR, encoding='utf-8')
-# --------- 读取config.ini配置文件 ---------------
-base_URL = con.get("WebURL", "URL")
+# --------- 读取配置文件 ---------------
+con.read(setting.CONFIG_PATH, encoding='utf-8')
 log = Log()
 
 
@@ -23,11 +22,10 @@ class Page(object):
     基础类，用于页面对象类的继承
     """
 
-    def __init__(self, selenium_driver, base_url=base_URL, parent=None):
-        self.base_url = base_url
+    def __init__(self, selenium_driver):
+        self.base_url = con.get("WebURL", "URL")
         self.driver = selenium_driver
-        self.parent = parent
-        self.timeout = 10
+        self.timeout = con.getint("Driver", "Timeout")
 
     def open(self, url):
         """
@@ -37,10 +35,6 @@ class Page(object):
         """
         url = self.base_url + url
         self.driver.get(url)
-    #    self.land_success(url)
-
-    def land_success(self, url):
-        assert self.driver.current_url == url, '打开页面失败：' + url
 
     def find_element(self, *loc):
         """

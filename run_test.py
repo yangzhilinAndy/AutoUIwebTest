@@ -1,33 +1,27 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
 
-import os,sys
+import os
+import sys
+import time
 sys.path.append(os.path.dirname(__file__))
 from config import setting
-import pytest, threading
-from public.models.sendmail import send_mail
+import pytest
+from utils.log import Log
 
-testcases = setting.TEST_DIR + '/test_index.py'
+def run_cases(browser_name, testcases_path):
+    """执行所有的测试用例"""
+    allure_temp_results = f'{setting.TEST_RESULT}/temp'
+    allure_report_path = f'{setting.TEST_RESULT}/html_report'
+    pytest.main(
+        ['--browser=' + browser_name, '-v', testcases_path, '-s', f'--alluredir={allure_temp_results}',
+         '--clean-alluredir'])
 
-def runner(name):
-    pytest.main(['--browser='+name, '-v', testcases, '-s', f'--alluredir={setting.TEST_RESULT}/temp_json_report_'+name, '--clean-alluredir'])
+    os.system(f"allure generate {allure_temp_results} -o {allure_report_path} --clean")
 
-def run_cases(browser_list):
-    """执行所有的测试用例,
-    如果有多个browser,启动多线程执行"""
-    thread_list = []
-    for b in browser_list:
-        thread = threading.Thread(target=runner, args=(b,))
-        thread_list.append(thread)
-    for j in thread_list:
-        j.start()
-    for t in thread_list:
-        t.join()
-    for b in browser_list:
-        os.system(f"allure generate {setting.TEST_RESULT}/temp_json_report_{b} -o {setting.TEST_RESULT}/html_{b}_report --clean")
-  #  send_mail(report) #调用发送邮件模块
 
-if __name__ =="__main__":
-    browser_list = ('chrome','safari')
-    os.environ['PATH'] += "/Users/zhilinyang/Desktop/webTest/allure-2.22.1/bin:"
-    run_cases(browser_list)
+if __name__ == "__main__":
+    browser = 'chrome'
+    testcases = setting.TEST_DIR + '/test_index.py'
+
+    run_cases(browser, testcases)
